@@ -1,0 +1,23 @@
+# pixi environments
+.pixi
+*.egg-info
+# pixi.lock
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info
+*.whl
+*.manifest
+*.spec
+*.db
+*.DS_Store
+
+# Model checkpoints
+*.pt
+runs/*
+outputs/*

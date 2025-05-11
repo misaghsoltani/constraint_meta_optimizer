@@ -1,0 +1,48 @@
+# Configuration
+
+# Environments (Safety Gymnasium tasks)
+env_ids:
+  - SafetyPointGoal1-v0
+  - SafetyCarGoal1-v0
+
+# Meta-training parameters (N_meta, T, etc.)
+total_meta_iters: 500
+inner_rollouts: 6
+episode_length: 50
+meta_batch_size: 8
+eval_episodes: 10
+
+# Policy network architecture
+hidden_layers: [128, 128]
+hidden_size: 128
+
+# Optimizer hyper-parameters (used for baseline)
+alpha_theta: 3e-4
+alpha_lambda: 2e-4
+
+# PID Lagrangian parameters (initial values)
+init_KP: 0.08
+init_KI: 0.015
+init_KD: 0.007
+init_etaR: 1e-3
+init_etaC: 1e-3
+init_lambda: 0.2
+
+# Meta-optimizer training
+meta_lr: 3e-4
+unroll_steps: 25
+gamma: 0.995
+cost_limit: 20.0
+mu: 50.0
+
+# LSTM meta-optimizer parameters
+lstm_layers: 2
+
+# Logging and checkpointing
+log_interval: 10
+checkpoint_interval: 50
+
+vector_envs_per_task: 1
+seed: 123
+device: "cuda"
+meta_optimizer_type: "lstm" # Options: "lstm", "pid"

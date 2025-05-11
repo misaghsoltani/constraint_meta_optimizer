@@ -1,0 +1,16 @@
+# Configuration with reduced iterations for quick testing
+
+defaults:
+  - default
+
+# Override parameters for quicker testing
+total_meta_iters: 3
+inner_rollouts: 2
+episode_length: 10
+meta_batch_size: 1
+eval_episodes: 1
+device: "cpu"
+
+# Logging and checkpointing
+log_interval: 1
+checkpoint_interval: 1
